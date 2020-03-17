@@ -1,0 +1,1548 @@
+<?php
+$con=mysqli_connect("localhost","root","","eduline") or die("Connection Failed");
+?>
+<html>
+<head>
+ <title>EduLine-UTMSPACE</title>
+ <link rel="icon" type="image/png" href="eduline logo/utmspaceicon.png"/>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="description" content="This Educational Online Learning website (EduLine) was established to assist in managing the development of teaching & learning technology at UTMSPACE, in addition to promoting a more interactive e-learning culture among faculty and students.">
+ <meta name="keywords" content="Blackboard,Eduline,e-learning,online learning,online learning course,UTMSPACE Eduline,UTMSPACE e-learning,UTMSPACE online learning,UTMSPACE online learning course">
+ <meta name="revised" content="Eduline, 12/01/2020">
+ <meta name="author" content="David Liew">
+ <meta http-equiv="refresh" content="3600">
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://kit.fontawesome.com/924e911748.js" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+ <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+
+<body onresize="innerSize()">
+ <div class="navbar" id="nav">
+  <a href="home.php" title="EduLine" class="logo"><img src="edulinelogo9.png" width="216px" height="89px" alt="EduLine"></a>
+  <!--<a href="home.php" class="logo" title="EduLine"><img src="edulinelogo.png" width="162px" height="75px" alt="EduLine"></a> <!--434,200-->
+  <a href="javascript:void(0);" class="icon" onclick="responsive()"><i class="fa fa-bars"></i></a>
+  <div class="line1">
+   <a class="home active">Home</a>
+   <script>
+   $(".home").on("click",function(){$(window).scrollTop(0);});
+   </script>
+   <div class="dropdown">Courses <i class="fa fa-caret-down"></i>
+	<div class="dropdown-group">
+	 <div class="dropdown-course">Foundation Programme <i class="fa fa-caret-down"></i>
+	  <div class="dropdown-list">
+	   <a href="http://space.utm.my/foundation/">Intermediate Mathematics</a>
+	   <a href="http://space.utm.my/foundation/">Computer Literacy</a>
+	   <a href="http://space.utm.my/foundation/">Fundamentals of Knowledge</a>
+	   <a href="http://space.utm.my/foundation/">General English</a>
+	  </div>
+	 </div>
+	 <div class="dropdown-course">Diploma Programme <i class="fa fa-caret-down"></i>
+	  <div class="dropdown-list">
+	   <a href="http://space.utm.my/diploma/">Civil Engineering</a>
+	   <a href="http://space.utm.my/diploma/">Chemistry Engineering</a>
+	   <a href="http://space.utm.my/diploma/">Electrical Engineering (Mechatronic)</a>
+	   <a href="http://space.utm.my/diploma/">Electronics Engineering</a>
+	   <a href="http://space.utm.my/diploma/">Electrical Engineering (Power)</a>
+	   <a href="http://space.utm.my/diploma/">Mechanical Engineering</a>
+	   <a href="http://space.utm.my/diploma/">Computer Science (Information Technology)</a>
+	   <a href="http://space.utm.my/diploma/">Computer Science (Multimedia)</a>
+	   <a href="http://space.utm.my/diploma/">Land Surveying</a>
+	   <a href="http://space.utm.my/diploma/">Quantity Surveying</a>
+	   <a href="http://space.utm.my/diploma/">Urban and Regional Planning</a>
+	   <a href="http://space.utm.my/diploma/">Architecture</a>
+	   <a href="http://space.utm.my/diploma/">Property Management</a>
+	   <a href="http://space.utm.my/diploma/">Technology Management</a>
+	   <a href="http://space.utm.my/diploma/">Technology Management (Accounting)</a>
+	  </div>
+	 </div>
+	 <div class="dropdown-course">Degree Programme <i class="fa fa-caret-down"></i>
+	  <div class="dropdown-list">
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Civil)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Electrical)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Electrical-Electronics)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Electrical-Mechatronics)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Mechanical)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Chemical)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Petroleum)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Geomatic)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science (Property Management)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science (Land Administration and Development)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science in Architecture</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Quantity Surveying</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Urban and Regional Planning</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Landscape Architecture</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science in Construction</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science (Industrial Design)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Electronic Systems Engineering</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Mechanical Precision Engineering</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Engineering (Bio-Medical)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science (Biology)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science (Industrial Biology)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Computer Science (Software Engineering)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Science (Industrial Mathematics)</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Accounting</a>
+	   <a href="http://space.utm.my/utmidp/">Bachelor Of Management (Technology)</a>
+	  </div>
+	 </div>
+	 <div class="dropdown-course">Part-Time Programme <i class="fa fa-caret-down"></i>
+	  <div class="dropdown-list">
+	   <a href="http://space.utm.my/diploma-study/">Civil Engineering</a>
+	   <a href="http://space.utm.my/diploma-study/">Electrical Engineering (Power)</a>
+	   <a href="http://space.utm.my/diploma-study/">Mechanical Engineering</a>
+	   <a href="http://space.utm.my/diploma-study/">Technology Management</a>
+	   <a href="http://space.utm.my/diploma-study/">Technology Management (Accounting)</a>
+	   <a href="http://space.utm.my/diploma-study/">Property Management</a>
+	   <a href="http://space.utm.my/diploma-study/">Computer Science (Information Technology)</a>
+	   <a href="http://space.utm.my/diploma-study/">Science With Education (Islamic Studies)</a>
+	   <a href="http://space.utm.my/bachelor-degree-programme/">Bachelor of Engineering(Geomatics)</a>
+	   <a href="http://space.utm.my/bachelor-degree-programme/">Bachelor of Science (Property Management)</a>
+	   <a href="http://space.utm.my/bachelor-degree-programme/">Bachelor of Science (Land Administration And Development)</a>
+	   <a href="http://space.utm.my/bachelor-degree-programme/">Bachelor of Architecture</a>
+	  </div>
+	 </div>
+    </div>
+   </div>
+   <a href="tutorial.php">Blackboard Tutorial</a>
+   <a href="chart.php">Online Engagement</a>
+   <a href="help.php">Help-Desk</a>
+   <a href="about.php">About Us</a>
+   <a href="https://vr-utm-home.web.app/#/home" target="_blank"><i class="fa fa-globe"></i> Tour UTMSPACE</a>
+  </div>
+ </div>
+ <script>
+ function responsive()
+ {
+  var res=document.getElementById("nav");
+  if(res.className==="navbar")
+  {
+   res.className+=" responsive";
+  }
+  else
+  {
+   res.className="navbar";
+  }
+ }
+ </script>
+ 
+ <script>
+ setTimeout(function()
+ {
+  $('.live-icon').css('display','none');
+  $('.live-icon').css('opacity','0');
+  $('.live-chat').css('display','block');
+  setTimeout(function()
+  {
+   $('.live-chat').css('height','480px');
+   $('.live-chat').css('opacity','1');
+  },200);
+ },200);
+ </script>
+ 
+ <div class="live-icon">
+  <i class="fas fa-comments"></i>
+ </div>
+ <script>
+ $('.live-icon').click(function()
+ {
+  $('.live-icon').css('display','none');
+  $('.live-icon').css('opacity','0');
+  $('.live-chat').css('display','block');
+  setTimeout(function()
+  {
+   $('.live-chat').css('height','480px');
+   $('.live-chat').css('opacity','1');
+  },200);
+ });
+ </script>
+ 
+ <div class="live-chat">
+ 
+  <div class="chat-theme">
+   <span style="float:left;width:30px"><i class="fas fa-sign-out-alt fa-flip-horizontal" title='Sign Out'></i></span>
+   <span id="chat-theme">EduLine CHAT</span>
+   <span style="float:right;width:50px"><i class="fa fa-minus" title='Minimize'></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-times" title='Close'></i></span>
+  </div>
+  <script>
+  $('.fa-sign-out-alt').click(function()
+  {
+   Swal.fire({title:'Sign Out',text:'Do you want to sign out?',icon:'question',
+              showCancelButton:true,confirmButtonColor:'red',cancelButtonColor:'black',confirmButtonText:'Sure',cancelButtonText:'No'})
+   .then((result)=>{
+	if(result.value)
+	{
+     location='simad.php?opt=signout';
+	}
+   })
+  });
+  $('#chat-theme').click(function()
+  {
+   $('.live-chat').css('height','480px');
+  });
+  $('.fa-minus').click(function()
+  {
+   $('.live-chat').css('height','33px');
+  });
+  $('.fa-times').click(function()
+  {
+   $('.live-icon').css('display','block');
+   $('.live-chat').css('height','33px');
+   $('.live-chat').css('opacity','0');
+   setTimeout(function()
+   {
+	$('.live-icon').css('opacity','1');
+	$('.live-chat').css('display','none');
+   },500);
+  });
+  </script>
+  <br>
+  
+  <div class="chat-border">
+   <div class="chat-AImsg">Having trouble in e-learning? We are happy to help. Please register account and chat with us.</div>
+   <form autocomplete="off" method="post">
+    
+	<input type="text" id="btn" name="btn" value="1" style="opacity:0;position:absolute;top:0px;z-index:-1">
+    <input type="text" id="sendE" name="sendE" value="0" style="opacity:0;position:absolute;top:0px;z-index:-1">
+	<input type="text" id="otp" name="otp" value="<?php if(isset($_POST['submit'])){echo $_POST['otp'];}?>" style="opacity:0;position:absolute;top:0px;z-index:-1">
+    
+	<div class="reg-name regname1">Name <span style="color:red">*</span></div>
+    <div class="reg-input regname2">
+	 <input type="text" id="chatname" name="chatname" onfocusout="Name(this);" oninput="Name(this);" oninvalid="Name(this);" onkeypress="return(event.charCode>=65&&event.charCode<=90)||(event.charCode>=97&&event.charCode<=122)" title="Please fill out your full name"><br>
+	 <script>
+	 function toUpperCase(str){return str.split(/\s+/).map(s=>s.charAt(0).toUpperCase()+s.substring(1).toLowerCase()).join(" ");}
+     $('#chatname').on('keyup', function(event)
+	 {	
+      var upper=$(this);
+      upper.val(toUpperCase(upper.val()));
+     });
+	 
+	 function Name(names)
+	 {
+	  var alphabet=/^[A-Za-z]+$/;
+	  var name=document.getElementById('chatname').value;
+	  if(name=='')
+	  {
+	   names.setCustomValidity('Please fill out your full name');
+	   document.getElementById('warningName').innerHTML="Please fill out your full name";
+	  }
+	  else if(name.match(alphabet))
+	  {
+	   names.setCustomValidity('');
+	   document.getElementById('warningName').innerHTML="";
+	  }
+	  else
+	  {
+	   names.setCustomValidity('Please enter english only');
+	   document.getElementById('warningName').innerHTML="Please enter english only";
+	  }
+	 }
+	 </script>
+	 <span id="warningName"></span><br>
+    </div>
+	
+	<div class="reg-name">Email <span style="color:red">*</span></div>
+    <div class="reg-input">
+	 <input type="email" id="chatemail" name="chatemail" onfocusout="Email(this);" oninput="Email(this);" oninvalid="Email(this);" title="Please fill out your email" required><br>
+     <script>
+     function Email(emails)
+	 {
+	  var email=document.getElementById('chatemail').value;
+	  if(email=='')
+	  {
+	   emails.setCustomValidity('Please fill out your email');
+	   document.getElementById('warningEmail').innerHTML="Please fill out your email";
+	  }
+  	  else
+	  {
+	   emails.setCustomValidity('');
+	   document.getElementById('warningEmail').innerHTML="";
+	  }
+	 }
+	 </script>
+	 <span id="warningEmail"></span><br>
+    </div>
+	
+	<div class="reg-name">Password <span style="color:red">*</span></div>
+    <div class="reg-input">
+	 <input type="password" id="chatpass" name="chatpass" onfocusout="Password(this);" oninput="Password(this);" oninvalid="Password(this);" onkeypress="return(event.charCode>=48&&event.charCode<=57)||(event.charCode>=65&&event.charCode<=90)||(event.charCode>=97&&event.charCode<=122)" title="Please fill out your password" required><br>
+     <script>
+	 $('#chatpass').select(function(){this.selectionStart=this.selectionEnd;return false;});
+	 
+     function Password(pass)
+	 {
+	  var alphanumeric=/^[A-Za-z0-9]+$/;
+	  var chatpass=document.getElementById('chatpass').value;
+	  if(chatpass=="")
+	  {
+	   pass.setCustomValidity('Please enter your password');
+	   document.getElementById('warningPassword').innerHTML="Please enter your password";
+	  }
+	  else if(chatpass.match(alphanumeric))
+	  {
+	   pass.setCustomValidity('');
+	   document.getElementById('warningPassword').innerHTML="";
+	  }
+	  else
+	  {
+	   pass.setCustomValidity('Please avoid enter any symbol');
+	   document.getElementById('warningPassword').innerHTML="Please avoid enter any symbol";
+	  }
+	 }
+	 </script>
+	 <span id="warningPassword"></span><br>
+	 <i class="fa fa-eye-slash" id="eye"></i>
+	 <script>
+	 var pwd=document.getElementById('chatpass');
+	 $("#eye").click(function()
+	 {
+	  $(this).toggleClass("fa-eye-slash fa-eye fa-lg");
+	  (pwd.type=='password')?pwd.type='text':pwd.type='password';
+	 });
+	 </script>
+    </div>
+	
+	<div class="reg-name regcode1">Verification Code<span style="color:red">*</span></div>
+    <div class="reg-input regcode2">
+	 <input type="text" id="chatverify" name="chatverify" onfocusout="Verify(this);" oninput="Verify(this);" oninvalid="Verify(this);" onkeypress="return(event.charCode>=48&&event.charCode<=57)||(event.charCode>=65&&event.charCode<=90)||(event.charCode>=97&&event.charCode<=122)" title="Please fill out verify code"><br>
+     <script>
+	 $('#chatverify').keyup(function(){this.value=this.value.toUpperCase();});
+	 
+     function Verify(very)
+	 {
+	  var chatverify=document.getElementById('chatverify').value;
+	  if(chatverify=="")
+	  {
+	   very.setCustomValidity('Please enter your verfiy code');
+	   document.getElementById('warningVerify').innerHTML="Please enter your verify code";
+	  }
+	  else
+	  {
+	   very.setCustomValidity('');
+	   document.getElementById('warningVerify').innerHTML="";
+	  }
+	 }
+	 </script>
+	 <span id="warningVerify"></span><br>
+    </div>
+
+	<div><button type="submit" id="submit" name="submit"><span id="submitType">Sign Up</span> <i class="fas fa-circle-notch fa-spin"></i></button></div>
+	<div id="option-link">Register</div>
+	<script>
+	$('#option-link').click(function()
+	{
+	 document.getElementById('chatname').value="";
+	 document.getElementById('chatemail').value="";
+	 document.getElementById('chatpass').value="";
+	 document.getElementById('warningName').innerHTML="";
+	 document.getElementById('warningEmail').innerHTML="";
+	 document.getElementById('warningPassword').innerHTML="";
+	 document.getElementById('warningVerify').innerHTML="";
+	 if(this.innerHTML=='Register')
+	 {
+	  document.getElementById('btn').value=0;
+	  $('.regname1,.regname2').css('display','block');
+	  $('#chatname').prop('required',true);
+	  document.getElementById('submitType').innerHTML='Register';
+	  document.getElementById('option-link').innerHTML='Sign Up';
+	  if(document.getElementById('sendE').value==1)
+	  {
+	   $('.regcode1,.regcode2').css('display','block');
+	   $('#chatverify').prop('required',true);
+	  }
+	 }
+	 else if(this.innerHTML=='Sign Up')
+	 {
+	  document.getElementById('btn').value=1;
+	  $('.regname1,.regname2,.regcode1,.regcode2').css('display','none');
+	  document.querySelector('#chatname').required=false;
+	  document.querySelector('#chatverify').required=false;
+	  document.getElementById('submitType').innerHTML='Sign Up';
+	  document.getElementById('option-link').innerHTML='Register';
+	  document.getElementById('sendE').value=0;
+	 }
+	 $('.chat-border').css('opacity','0');
+     setTimeout(function()
+	 {
+	  $('.chat-border').css('opacity','1');
+	 },500);
+	});
+	</script>
+   </form>
+  </div>
+  
+  <div class="user-list">
+   <table class="search">
+   <col width="120px">
+   <col width="180px">
+    <tr>
+	 <td>Search Name:</td>
+	 <td><input type='text' id='search' onkeyup='search()' placeholder='search'></td>
+	 <script>
+	 function search()
+	 {
+	  var srh=document.getElementById('search');
+	  var filter=srh.value.toUpperCase();
+	  var uslist=document.getElementsByClassName('uslist');
+	  var usname=document.getElementsByClassName('usname');
+	  var txtValue;
+	  for(var a=0;a<usname.length;a++)
+	  {
+	   txtValue=usname[a].textContent||usname[a].innerText;
+	   if(txtValue.toUpperCase().indexOf(filter)>-1)
+	   {
+		uslist[a].style.display="";
+	   }
+	   else
+	   {
+		uslist[a].style.display="none";
+	   }
+	  }
+	 }
+	 </script>
+	</tr>
+   </table>
+   <table class="user-table" cellspacing="5px">
+   <col width="20px">
+   <col width="200px">
+   <col width="40px">
+   <col width="40px">
+   <?php
+   $select1="select * from chatadmin";
+   $query1=mysqli_query($con,$select1);
+   $num=0;
+   $countlist=0;
+   while($row=mysqli_fetch_array($query1,MYSQLI_ASSOC))
+   {
+	if($num==0)
+	{
+	 $num++;
+	 echo"
+	 <tr class='adlist'>
+	  <td class='tdbold'>Ad</td>";
+	}
+	else
+	{
+	 echo"
+	 <tr class='adlist'>
+	  <td></td>";
+	}
+	$delU="delU('".$row['chatemail']."')";
+	 echo"
+	  <td><button class='chatlist'>".$row['chatname']."</button></td>
+	  <td><button class='movU' onclick='movU(".$row['id'].")'><i class='fas fa-user-times'></i></button></td>
+	  <td><button class='delU' onclick=".$delU."><i class='fas fa-trash-alt'></i></button></td>
+	 </tr>";
+	$countlist++;
+   }
+   $select2="select * from chatuser order by chatname ASC";
+   $query2=mysqli_query($con,$select2);
+   $alpha='';
+   while($row=mysqli_fetch_array($query2,MYSQLI_ASSOC))
+   {
+	if($alpha!=$row['chatname'][0])
+	{
+	 $alpha=$row['chatname'][0];
+	 echo"
+	 <tr class='uslist' style='background:gainsboro'>
+	  <td class='tdbold'>".$row['chatname'][0]."</td>";
+	}
+	else
+	{
+	 echo"
+	 <tr class='uslist'>
+	  <td></td>";
+	}
+	$chatlist="chatlist('chat_".strtolower($row['chatname'])."',$countlist)";
+	$delU="delU('".$row['chatemail']."')";
+	
+	$chatname=$row['chatname'];
+	$select3="select * from chat_$chatname order by chatread DESC";
+	$query3=mysqli_query($con,$select3);
+	$a=0;
+	while($row2=mysqli_fetch_array($query3,MYSQLI_ASSOC))
+	{
+	 if($row2['chatread']=='unread')
+	 {$a++;}
+	}
+	if($a>0)
+	{
+     echo"<td class='usname'><button class='chatlist' style='background:red' onclick=".$chatlist.">".$row['chatname']."</button></td>";
+	}
+	else
+	{
+	 echo"<td class='usname'><button class='chatlist' onclick=".$chatlist.">".$row['chatname']."</button></td>";
+	}
+	echo"
+	  <td class='addad'><button class='addA' onclick='addA(".$row['id'].")'><i class='fas fa-user-plus'></i></button></td>
+	  <td><button class='delU' onclick=".$delU."><i class='fas fa-trash-alt'></i></button></td>
+	 </tr>";
+	$countlist++;
+   }
+   ?>
+   </table>
+   <script>
+   function chatlist(chatable,count)
+   {
+	document.getElementsByClassName('chatlist')[count].style.background='none';
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.open('GET','chat.php?id=3&&chatable='+chatable,true);
+	xmlhttp.send();
+
+	document.getElementById('ctable').value=chatable;
+	$('.user-list').css('opacity','0');
+	$('.chat-talk,.fa-arrow-left').css('display','block');
+	setTimeout(function()
+	{
+	 $('.user-list').css('display','none');
+	 $('.chat-talk,.fa-arrow-left').css('opacity','1');
+	},1000);
+   }
+   
+   function movU(id)
+   {
+	Swal.fire({title:'Remove admin',text:'Do you want to convert this admin account to user account?',icon:'question',
+               showCancelButton:true,confirmButtonColor:'orchid',cancelButtonColor:'red',confirmButtonText:'Sure',cancelButtonText:'No'})
+	.then((result)=>{
+	 if(result.value)
+	 {
+	  document.getElementById('search').value='';
+	  $.ajaxSetup({cache:false})
+	  setInterval(function(){$('.user-table').load('simad.php?opt=mov&id='+id,function(responseTxt,statusTxt,xhr)
+	  {
+	   if(statusTxt=='error')
+	   {
+		alert('Error: '+xhr.status+': '+xhr.statusText);
+	   }
+	  });
+	  },2000);
+	 }
+    })
+   }
+   
+   function addA(id)
+   {
+	Swal.fire({title:'Add as admin',text:'Do you want to convert this user account to admin account?',icon:'question',
+               showCancelButton:true,confirmButtonColor:'limegreen',cancelButtonColor:'red',confirmButtonText:'Sure',cancelButtonText:'No'})
+	.then((result)=>{
+	 if(result.value)
+	 {
+	  document.getElementById('search').value='';
+	  $.ajaxSetup({cache:false})
+	  setInterval(function(){$('.user-table').load('simad.php?opt=add&id='+id,function(responseTxt,statusTxt,xhr)
+	  {
+	   if(statusTxt=='error')
+	   {
+		alert('Error: '+xhr.status+': '+xhr.statusText);
+	   }
+	  });
+	  },2000);
+	 }
+    })
+   }
+   
+   function delU(chatemail)
+   {
+	Swal.fire({title:'Delete User Account',text:'Do you want to delete this user account?',icon:'question',
+               showCancelButton:true,confirmButtonColor:'limegreen',cancelButtonColor:'red',confirmButtonText:'Sure',cancelButtonText:'No'})
+	.then((result)=>{
+	 if(result.value)
+	 {
+	  document.getElementById('search').value='';
+	  $.ajaxSetup({cache:false})
+	  setInterval(function(){$('.user-table').load('simad.php?opt=del&chatemail='+chatemail,function(responseTxt,statusTxt,xhr)
+	  {
+	   if(statusTxt=='error')
+	   {
+		alert('Error: '+xhr.status+': '+xhr.statusText);
+	   }
+	  });
+	  },2000);
+     }
+    })
+   }
+   </script>
+  </div>
+  
+  <div class="chat-talk">
+   <div class="chat-height">
+   <i class='fas fa-arrow-left' onclick='back()' title="Back"></i>
+    <div class='chat-auto'>
+	 <div class='chat-admin'>Admin</div>
+     <div class='chatad'>Hi, what can I help you?</div>
+    </div>
+    <div class="chat-padding">
+	</div>
+   </div>
+   
+   <form name="chatform" id="chatform">
+	<input type="text" id="ciden" name="ciden" style="opacity:0;position:absolute;top:0px;z-index:-1">
+	<input type="text" id="ctable" name="ctable" style="opacity:0;position:absolute;top:0px;z-index:-1">
+	<input type="text" id="cname" name="cname" style="opacity:0;position:absolute;top:0px;z-index:-1">
+    <input type="text" id="cmail" name="cmail" style="opacity:0;position:absolute;top:0px;z-index:-1">
+    <input type="text" id="cmsg" name="cmsg" placeholder="Text Here"><i class="fas fa-paper-plane fa-rotate-45" onclick="send()"></i>
+   </form>
+   <script>
+   $(document).ready(function(e)
+   {
+	$.ajaxSetup({cache:false})
+	setInterval(function()
+	{
+	 var chatable=chatform.ctable.value;
+	 $('.chat-padding').load('chat.php?id=2&chatable='+chatable,function(responseTxt,statusTxt,xhr)
+	 {
+	  if(statusTxt=='error')
+	  {
+	   alert('Error: '+xhr.status+': '+xhr.statusText);
+	  }
+	 });
+    },2000);
+   });
+   
+   function back()
+   {
+	document.getElementById('ctable').value='';
+	$('.chat-talk,.fa-arrow-left').css('opacity','0');
+	$('.user-list').css('display','block');
+	setTimeout(function()
+	{
+	 $('.chat-talk,.fa-arrow-left').css('display','none');
+	 $('.user-list').css('opacity','1');
+	},1000);
+   }
+   
+   function send()
+   {
+	if(!chatform.cmsg.value=='')
+	{
+	 var chatiden=chatform.ciden.value;
+	 var chatable=chatform.ctable.value;
+	 var chatname=chatform.cname.value;
+	 var chatemail=chatform.cmail.value;
+	 var chatmsg=chatform.cmsg.value;
+	 
+	 var xmlhttp=new XMLHttpRequest();
+	 xmlhttp.onreadystatechange=function()
+	 {
+	  if(this.readyState==4 && this.status==200)
+	  {
+	   document.getElementsByClassName('chat-padding').innerHTML=xmlhttp.responseText;
+	  }
+	 }
+	}
+	xmlhttp.open('GET','chat.php?id=1&chatiden='+chatiden+'&chatable='+chatable+'&chatname='+chatname+'&chatemail='+chatemail+'&chatmsg='+chatmsg,true);
+	xmlhttp.send();
+	document.getElementById('cmsg').value='';
+	
+	$(document).ready(function(e)
+    {
+	 $.ajaxSetup({cache:false})
+	 setInterval(function()
+	 {
+	  $('.chat-padding').load('chat.php?id=2&chatable='+chatable,function(responseTxt,statusTxt,xhr)
+	  {
+	   if(statusTxt=='error')
+	   {
+		alert('Error: '+xhr.status+': '+xhr.statusText);
+	   }
+	  });
+     },2000);
+    });
+   }
+   </script>
+  </div>
+ </div>
+  
+ <?php
+ if(isset($_POST['submit']))
+ {
+  $btn=$_POST['btn'];
+  $sendE=$_POST['sendE'];
+  $otp=$_POST['otp'];
+  
+  if($btn=='0')
+  {
+   $chatname=$_POST['chatname'];
+   $chatemail=$_POST['chatemail'];
+   $chatpass=$_POST['chatpass'];
+	
+   echo"<script>
+   $('.live-icon').css('display','none');
+   $('.live-icon').css('opacity','0');
+   $('.live-chat').css('display','block');
+   $('.live-chat').css('height','480px');
+   $('.live-chat').css('opacity','1');
+   </script>";
+	
+   if($sendE=='0')
+   {
+	$select1="select * from chatdeveloper where chatemail='$chatemail'";
+	$query1=mysqli_query($con,$select1);
+	$select2="select * from chatadmin where chatemail='$chatemail'";
+	$query2=mysqli_query($con,$select2);
+	$select3="select * from chatuser where chatemail='$chatemail'";
+	$query3=mysqli_query($con,$select3);
+	if(mysqli_num_rows($query1)>0||mysqli_num_rows($query2)>0||mysqli_num_rows($query3)>0)
+    {
+	 echo"<script>
+     const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	  toast.addEventListener('mouseenter',Swal.stopTimer)  
+      toast.addEventListener('mouseleave',Swal.resumeTimer)
+	 }})
+     Toast.fire({icon:'warning',title:'Your have been register'})
+	 document.getElementById('btn').value=0;
+	 $('.regname1,.regname2').css('display','block');
+	 $('#chatname').prop('required',true);
+	 document.getElementById('submitType').innerHTML='Register';
+	 document.getElementById('option-link').innerHTML='Sign Up';
+	 </script>";
+	}
+	else
+	{
+	 $alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+     $numeric="0123456789";
+     $otp="";
+     for($a=1;$a<=3;$a++)
+     {
+	  $otp .= substr($alphabet,(rand()%(strlen($alphabet))),1);
+	 }
+     for($a=1;$a<=3;$a++)
+     {
+	  $otp .= substr($numeric,(rand()%(strlen($numeric))),1);
+	 }
+  
+     $to=$chatemail;
+     $subject="EduLine Chat Verification Code";
+     $message="
+	 <head>
+	  <style type='text/css'>
+	  .let-bor{border:3px solid #555;margin:auto;padding:20px;width:60%}
+	  .let-head{font-size:30px;font-weight:bold;text-align:center}
+	  .letter{font-size:20px;font-style:italic}
+	  </style>
+	 </head>
+	 <body>
+	  <div class='let-bor'>
+	   <div class='let-head'>EduLine Chat</div><br><br>
+	   <div class='letter'>
+		Welcome to EduLine Chat<br>
+		We need your verification code to confirm your account.<br>
+		Thanks for your cooperation!<br><hr><br>
+	    Your Verification Code is: <b style='color:red'>$otp</b>
+	   </div>
+	  </div>
+	 </body>";
+     $from="davidliew990212@gmail.com";
+     $headers = "MIME-Version:1.0"."\r\n";
+     $headers.="Content-type:text/html;charset=UTF-8"."\r\n";
+     $headers.="From: $from"."\r\n";
+     if(mail($to,$subject,$message,$headers))
+     {
+      echo"<script>
+      const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	   toast.addEventListener('mouseenter',Swal.stopTimer)  
+       toast.addEventListener('mouseleave',Swal.resumeTimer)
+	  }})
+      Toast.fire({icon:'success',title:'Verify Code Sent',html:'<br />Please check your email'})
+	  document.getElementById('sendE').value=1;
+	  $('.regcode1,.regcode2').css('display','block');
+	  $('#chatverify').prop('required',true);
+	  document.getElementById('otp').value='".$otp."';
+	  </script>";
+     }
+     else
+     {
+      echo"<script>
+      const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	   toast.addEventListener('mouseenter',Swal.stopTimer)  
+       toast.addEventListener('mouseleave',Swal.resumeTimer)
+	  }})
+      Toast.fire({icon:'warning',title:'Failed to send verify code'})
+	  </script>";
+     }
+	 echo"<script>
+	 document.getElementById('btn').value=0;
+	 $('.regname1,.regname2').css('display','block');
+	 $('#chatname').prop('required',true);
+	 document.getElementById('submitType').innerHTML='Register';
+	 document.getElementById('option-link').innerHTML='Sign Up';
+	 document.getElementById('chatname').value='".$chatname."';
+	 document.getElementById('chatemail').value='".$chatemail."';
+	 document.getElementById('chatpass').value='".$chatpass."';
+	 </script>";
+	}
+   }
+	
+   else if($sendE=='1')
+   {
+	if($_POST['chatverify']==$otp)
+	{
+	 for($a=1,$b=2;$a<$b;$a++,$b++)
+	 {
+	  $select="select * from chatuser where chatname='$chatname$a'";
+	  $query1=mysqli_query($con,$select);
+	  if(mysqli_num_rows($query1)==0)
+	  {
+	   $select="select * from chatuser where chatemail='$chatemail'";
+	   $query2=mysqli_query($con,$select);
+	   if(mysqli_num_rows($query2)==0)
+	   {
+		$insert="insert into chatuser (chatname,chatemail,chatpass) values ('$chatname$a','$chatemail','$chatpass')";
+		$query3=mysqli_query($con,$insert);
+		$table="create table chat_$chatname$a (id int(255) unsigned auto_increment primary key,chatname varchar(255) not null,chatemail varchar(255) not null,chatiden varchar(255) not null,chatmsg varchar(255) not null,chattime timestamp default current_timestamp,chatread varchar(255) not null)";
+	    $query4=mysqli_query($con,$table);
+		$a=$b;
+	   }
+	   else
+	   {
+		echo"<script>
+        const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	     toast.addEventListener('mouseenter',Swal.stopTimer)  
+         toast.addEventListener('mouseleave',Swal.resumeTimer)
+	    }})
+        Toast.fire({icon:'warning',title:'Your have been register'})";
+	   }
+	  }
+	 }
+	  
+	 if($query3==true&&$query4==true)
+	 {
+	  echo"<script>
+	  const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	   toast.addEventListener('mouseenter',Swal.stopTimer)  
+       toast.addEventListener('mouseleave',Swal.resumeTimer)
+	  }})
+      Toast.fire({icon:'success',title:'Register successfully'})
+	  document.querySelector('#chatname').required=false;
+	  document.querySelector('#chatverify').required=false;
+	  </script>";
+	 }
+	 else
+	 {
+	  echo"<script>
+      const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	   toast.addEventListener('mouseenter',Swal.stopTimer)  
+       toast.addEventListener('mouseleave',Swal.resumeTimer)
+	  }})
+      Toast.fire({icon:'warning',title:'Register failed'})
+	  document.getElementById('btn').value=0;
+	  document.getElementById('sendE').value=1;
+	  $('.regname1,.regname2,.regcode1,.regcode2').css('display','block');
+	  $('#chatname').prop('required',true);
+	  $('#chatverify').prop('required',true);
+	  document.getElementById('submitType').innerHTML='Register';
+	  document.getElementById('option-link').innerHTML='Sign Up';
+	  document.getElementById('chatname').value='".$chatname."';
+	  document.getElementById('chatemail').value='".$chatemail."';
+	  document.getElementById('chatpass').value='".$chatpass."';
+	  </script>";
+	 }
+	}
+	else
+	{
+	 echo"<script>
+	 const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	  toast.addEventListener('mouseenter',Swal.stopTimer)  
+      toast.addEventListener('mouseleave',Swal.resumeTimer)
+	 }})
+     Toast.fire({icon:'warning',title:'The verify code is invalid'})
+	 document.getElementById('btn').value=0;
+	 document.getElementById('sendE').value=1;
+	 $('.regname1,.regname2,.regcode1,.regcode2').css('display','block');
+	 $('#chatname').prop('required',true);
+	 $('#chatverify').prop('required',true);
+	 document.getElementById('submitType').innerHTML='Register';
+	 document.getElementById('option-link').innerHTML='Sign Up';
+	 document.getElementById('chatname').value='".$chatname."';
+	 document.getElementById('chatemail').value='".$chatemail."';
+	 document.getElementById('chatpass').value='".$chatpass."';
+	 </script>";
+	}
+   }
+  }
+   
+  if($btn=='1')
+  {
+   $chatemail=$_POST['chatemail'];
+   $chatpass=$_POST['chatpass'];
+	
+   echo"<script>
+   $('.live-icon').css('display','none');
+   $('.live-icon').css('opacity','0');
+   $('.live-chat').css('display','block');
+   $('.live-chat').css('height','480px');
+   $('.live-chat').css('opacity','1');
+   </script>";
+	
+   $select1="select * from chatdeveloper where chatemail='$chatemail' and chatpass='$chatpass'";
+   $query1=mysqli_query($con,$select1);
+   $select2="select * from chatadmin where chatemail='$chatemail' and chatpass='$chatpass'";
+   $query2=mysqli_query($con,$select2);
+   $select3="select * from chatuser where chatemail='$chatemail' and chatpass='$chatpass'";
+   $query3=mysqli_query($con,$select3);
+   if(mysqli_num_rows($query1)>0)
+   {
+	$fa=mysqli_fetch_array($query1,MYSQLI_ASSOC);
+	$chatname=$fa['chatname'];
+	$_SESSION['iden']='developer';
+	$_SESSION['name']=$chatname;
+	$_SESSION['email']=$chatemail;
+	echo"<script>
+	$('.fa-sign-out-alt,.fa-circle-notch,.user-list').css('display','block');
+	$('.chat-border').css('opacity','0');
+	setTimeout(function()
+	{
+	 $('.chat-border').css('display','none');
+	 $('.user-list').css('opacity','1');
+	},1000);
+	window.open('developer.php');
+	</script>";
+   }
+   else if(mysqli_num_rows($query2)>0)
+   {
+	$fa=mysqli_fetch_array($query2,MYSQLI_ASSOC);
+	$chatname=$fa['chatname'];
+	$_SESSION['iden']='admin';
+	$_SESSION['name']=$chatname;
+	$_SESSION['email']=$chatemail;
+	echo"<script>
+	$('.fa-sign-out-alt,.fa-circle-notch,.user-list').css('display','block');
+	$('.chat-border').css('opacity','0');
+	$('.adlist,.addad,.addA').css('display','none');
+	setTimeout(function()
+	{
+	 $('.chat-border').css('display','none');
+	 $('.user-list').css('opacity','1');
+	},1000);
+	</script>";
+   }
+   else if(mysqli_num_rows($query3)>0)
+   {
+	$fa=mysqli_fetch_array($query3,MYSQLI_ASSOC);
+	$chatname=$fa['chatname'];
+	$_SESSION['iden']='user';
+	$chatable="chat_".strtolower($chatname);
+	$_SESSION['table']=$chatable;
+	$_SESSION['name']=$chatname;
+	$_SESSION['email']=$chatemail;
+	echo"<script>
+	$('.fa-sign-out-alt,.fa-circle-notch,.chat-talk').css('display','block');
+	$('.chat-border').css('opacity','0');
+	setTimeout(function()
+	{
+	 $('.chat-border').css('display','none');
+	 $('.chat-talk').css('opacity','1');
+	},1000);
+	var cname=document.getElementById('cname').value;
+	$('.chat-padding').load('chat.php?id=2&chatname='+cname,function(responseTxt,statusTxt,xhr)
+	{
+	 if(statusTxt=='error')
+	 {alert('Error: '+xhr.status+': '+xhr.statusText);}
+	});
+	</script>";
+   }
+   else
+   {
+	echo"<script>
+	const Toast=Swal.mixin({toast:true,position:'top-right',showConfirmButton:false,timer:2000,timerProgressBar:true,onOpen:(toast)=>{
+	 toast.addEventListener('mouseenter',Swal.stopTimer)  
+     toast.addEventListener('mouseleave',Swal.resumeTimer)
+	}})
+    Toast.fire({icon:'warning',title:'Your email or password is invalid'})
+	document.querySelector('#chatname').required=false;
+	document.querySelector('#chatverify').required=false;
+	</script>";
+   }
+  }
+ }
+  
+ if(isset($_SESSION['iden']))
+ {
+  $chatiden=$_SESSION['iden'];
+  $chatname=$_SESSION['name'];
+  $chatemail=$_SESSION['email'];
+  $chatable='';
+  if($chatiden=='user'){$chatable=$_SESSION['table'];}
+  echo"<script>
+  document.getElementById('ciden').value='".$chatiden."';
+  document.getElementById('ctable').value='".$chatable."';
+  document.getElementById('cname').value='".$chatname."';
+  document.getElementById('cmail').value='".$chatemail."';
+  </script>";
+ }
+ ?>
+ 
+ <div class="content">
+  <img src="slider/slider7.png" class="slider">
+  <!--<video class="slider" autoplay muted loop>
+   <source src="EduLine Blackboard.mp4" type="video/mp4">
+  </video>-->
+  
+  <div class="line2">
+   <div class="srnAccount">
+	<button class="btnAccount" onclick="">Blackboard Sign Up</button>
+    <div class="desAccount">Sign up to enroll online courses available</div>
+   </div>
+   <div class="srnBlack">
+	<button class="btnBlack" onclick="window.open('https://utmspace.blackboard.com/')">Blackboard Log In</button>
+    <div class="desBlack" id="desBlack">Academics and students access for learning materials</div>
+   </div>
+  </div>
+  <script>
+  $(".btnAccount").hover(function()
+  {
+   $(".desAccount").css("opacity","1");},function(){$(".desAccount").css("opacity","0");
+  });
+  $(".btnBlack").hover(function()
+  {
+   $(".desBlack").css("opacity","1");},function(){$(".desBlack").css("opacity","0");
+  });
+  </script>
+  
+  <div class="AC">
+   <div class="left-theme1">
+    <div  class="theme1">Creating learning experience through Blackboard</div>
+    <div class="hr">____</div>
+   </div>
+   <div class="tab">
+    <button class="tab-programme active" onclick="openTab(event,'foundation')"><span id="pro1"></span> <i class="fa fa-caret-down"></i></button>
+    <button class="tab-programme" onclick="openTab(event,'diploma')"><span id="pro2"></span> <i class="fa fa-caret-down"></i></button>
+    <button class="tab-programme" onclick="openTab(event,'degree')"><span id="pro3"></span> <i class="fa fa-caret-down"></i></button>
+    <button class="tab-programme" onclick="openTab(event,'part-time')"><span id="pro4"></span> <i class="fa fa-caret-down"></i></button>
+   </div>
+   <script>
+   function openTab(evt,programme)
+   {
+	var a;
+    var tabcontent=document.getElementsByClassName("tab-content");
+    for(a=0;a<tabcontent.length;a++)
+	{
+     tabcontent[a].style.display="none";
+	 tabcontent[a].style.opacity="0";
+    }
+    var tabprogramme=document.getElementsByClassName("tab-programme");
+    for(a=0;a<tabprogramme.length;a++)
+	{
+     tabprogramme[a].className=tabprogramme[a].className.replace(" active", "");
+    }
+    document.getElementById(programme).style.display="block";
+	document.getElementById(programme).style.opacity="1";
+    evt.currentTarget.className+=" active";
+   }
+   </script>
+   <div id="foundation" class="tab-content">
+    <div class="line3">
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-calculator"></i></div>
+	  <img src="course/f1.jpeg" class="course-img" alt="Intermediate Mathematics">
+	  <p class="course-name">Intermediate Mathematics</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-desktop"></i></div>
+      <img src="course/f2.jpg" class="course-img" alt="Computer Literacy">
+	  <p class="course-name">Computer Literacy</p>
+     </span>
+     <span class="tab-course">
+      <div class="course-icon"><i class="fa fa-cog"></i></div>
+	  <img src="course/f3.jpg" class="course-img" alt="Fundamentals of Knowledge">
+	  <p class="course-name">Fundamentals of Knowledge</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-file"></i></div>
+      <img src="course/f4.png" class="course-img" alt="General English">
+      <p class="course-name">General English</p>
+     </span>
+    </div>
+   </div>
+   <div id="diploma" class="tab-content">
+    <div class="line3">
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-building"></i></div>
+	  <img src="course/d1.jpg" class="course-img" alt="Civil Engineering">
+	  <p class="course-name">Civil Engineering</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-flask"></i></div>
+      <img src="course/d2.jpg" class="course-img" alt="Chemistry Engineering">
+	  <p class="course-name">Chemistry Engineering</p>
+     </span>
+     <span class="tab-course">
+      <div class="course-icon"><i class="fa fa-cogs"></i></div>
+	  <img src="course/d3.jpg" class="course-img" alt="Electrical Engineering(Mechatronic)">
+	  <p class="course-name">Electrical Engineering (Mechatronic)</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-microchip"></i></div>
+      <img src="course/d4.jpg" class="course-img" alt="Electronics Engineering">
+      <p class="course-name">Electronics Engineering</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-bolt"></i></div>
+      <img src="course/d5.jpg" class="course-img" alt="Electrical Engineering(Power)">
+      <p class="course-name">Electrical Engineering (Power)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-wrench"></i></div>
+      <img src="course/d6.jpg" class="course-img" alt="Mechanical Engineering">
+      <p class="course-name">Mechanical Engineering</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-desktop"></i></div>
+      <img src="course/d7.jpg" class="course-img" alt="Computer Science(Information Technology)">
+      <p class="course-name">Computer Science<br>(Information Technology)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-music"></i></div>
+      <img src="course/d8.jpg" class="course-img" alt="Computer Science(Multimedia)">
+      <p class="course-name">Computer Science (Multimedia)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-area-chart"></i></div>
+      <img src="course/d9.jpg" class="course-img" alt="Land Surveying">
+      <p class="course-name">Land Surveying</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-drafting-compass"></i></div>
+      <img src="course/d10.jpg" class="course-img" alt="Quantity Surveying">
+      <p class="course-name">Quantity Surveying</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-city"></i></div>
+      <img src="course/d11.jpg" class="course-img" alt="Urban and Regional Planning">
+      <p class="course-name">Urban and Regional Planning</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-ruler-combined"></i></div>
+      <img src="course/d12.jpg" class="course-img" alt="Architecture">
+      <p class="course-name">Architecture</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-home"></i></div>
+      <img src="course/d13.jpg" class="course-img" alt="Property Management">
+      <p class="course-name">Property Management</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-tasks"></i></div>
+      <img src="course/d14.jpg" class="course-img" alt="Technology Management">
+      <p class="course-name">Technology Management</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-calculator"></i></div>
+      <img src="course/d15.jpg" class="course-img" alt="Technology Management(Accounting)">
+      <p class="course-name">Technology Management (Accounting)</p>
+     </span>
+    </div>
+   </div>
+   <div id="degree" class="tab-content">
+    <div class="line3">
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-building"></i></div>
+	  <img src="course/d1.jpg" class="course-img" alt="Bachelor Of Engineering(Civil)">
+	  <p class="course-name">Bachelor Of Engineering (Civil)</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-bolt"></i></div>
+      <img src="course/d5.jpg" class="course-img" alt="Bachelor Of Engineering(Electrical)">
+	  <p class="course-name">Bachelor Of Engineering (Electrical)</p>
+     </span>
+     <span class="tab-course">
+      <div class="course-icon"><i class="fa fa-microchip"></i></div>
+	  <img src="course/d4.jpg" class="course-img" alt="Bachelor Of Engineering(Electrical-Electronics)">
+	  <p class="course-name">Bachelor Of Engineering<br>(Electrical-Electronics)</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-cogs"></i></div>
+      <img src="course/d3.jpg" class="course-img" alt="Bachelor Of Engineering(Electrical-Mechatronics)">
+      <p class="course-name">Bachelor Of Engineering<br>(Electrical-Mechatronics)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-wrench"></i></div>
+      <img src="course/d6.jpg" class="course-img" alt="Bachelor Of Engineering(Mechanical)">
+      <p class="course-name">Bachelor Of Engineering (Mechanical)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-flask"></i></div>
+      <img src="course/d2.jpg" class="course-img" alt="Bachelor Of Engineering(Chemical)">
+      <p class="course-name">Bachelor Of Engineering (Chemical)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-oil-can"></i></div>
+      <img src="course/d16.jpg" class="course-img" alt="Bachelor Of Engineering(Petroleum)">
+      <p class="course-name">Bachelor Of Engineering (Petroleum)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-globe"></i></div>
+      <img src="course/d17.jpg" class="course-img" alt="Bachelor Of Engineering(Geomatic)">
+      <p class="course-name" >Bachelor Of Engineering (Geomatic)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-home"></i></div>
+      <img src="course/d13.jpg" class="course-img" alt="Bachelor Of Science(Property Management)">
+      <p class="course-name">Bachelor Of Science<br>(Property Management)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-area-chart"></i></div>
+      <img src="course/d16.jpg" class="course-img" alt="Bachelor Of Science(Land Adminstration and Development)">
+      <p class="course-name">Bachelor Of Science<br>(Land Administration and Development)</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-ruler-combined"></i></div>
+      <img src="course/d12.jpg" class="course-img" alt="Bachelor Of Science in Architecture">
+      <p class="course-name">Bachelor Of Science in Architecture</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-drafting-compass"></i></div>
+      <img src="course/d10.jpg" class="course-img" alt="Bachelor Of Quantity Surveying">
+      <p class="course-name">Bachelor Of Quantity Surveying</p>
+     </span>
+	 <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-city"></i></div>
+      <img src="course/d11.jpg" class="course-img" alt="Bachelor Of Urban and Regional Planning">
+      <p class="course-name">Bachelor Of Urban and Regional Planning</p>
+     </span>
+    </div>
+   </div>
+   <div id="part-time" class="tab-content">
+    <div class="line3">
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-building"></i></div>
+	  <img src="course/d1.jpg" class="course-img" alt="Civil Engineering">
+	  <p class="course-name">Civil Engineering</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-bolt"></i></div>
+      <img src="course/d5.jpg" class="course-img" alt="Electrical Engineering(Power)">
+	  <p class="course-name">Electrical Engineering (Power)</p>
+     </span>
+     <span class="tab-course">
+      <div class="course-icon"><i class="fa fa-wrench"></i></div>
+	  <img src="course/d6.jpg" class="course-img" alt="Mechanical Engineering">
+	  <p class="course-name">Mechanical Engineering</p>
+     </span>
+     <span class="tab-course">
+	  <div class="course-icon"><i class="fa fa-tasks"></i></div>
+      <img src="course/d14.jpg" class="course-img" alt="Technology Management">
+      <p class="course-name">Technology Management</p>
+     </span>
+    </div>
+   </div>
+  </div>
+  
+  <div class="courseware">
+   <div class="cw">
+    <div class="cw-theme">Courseware Sample</div>
+    <div class="cw-des">Have a look and experience learning online through courseware</div>
+    <button class="cw-btn" onclick="window.open('Principles of Management Chapter 1/story.html')">Try it now!</button>
+   </div>
+  </div>
+  
+  <div class="achievement">
+   <div class="center-word">
+    <div class="center-word-1">Center Achievement</div>
+    <div class="center-word-2">Here you can review some statistics about our Education Center</div>
+    <div class="center-data">
+      <i class="fa fa-globe"></i>
+	  <div id="count1" class="center-data-count">0</div>
+	  <div class="center-data-word">INSTRUCTORS</div>
+    </div>
+	<div class="center-data">
+      <i class="fa fa-book"></i>
+	  <div id="count2" class="center-data-count">0</div>
+	  <div class="center-data-word">COURSES</div>
+	</div>
+    <div class="center-data">
+      <i class="fa fa-user-plus"></i>
+	  <div id="count3" class="center-data-count">0</div>
+	  <div class="center-data-word">USERS</div>
+    </div>
+   </div>
+  </div>
+  <script>
+  window.onscroll=function(){onScroll()};
+  function onScroll()
+  {
+   if(document.body.scrollTop>=1250||document.documentElement.scrollTop>=1250)
+   {
+	var count1=document.getElementById('count1');
+    var count2=document.getElementById('count2');
+    var count3=document.getElementById('count3');
+    var countA=parseInt(count1.innerHTML);
+    var countB=parseInt(count2.innerHTML);
+    var countC=parseInt(count3.innerHTML);
+    var intervalA=setInterval(function()
+    {
+     if(countA<96)
+     {
+	  countA++;
+	 }
+     count1.innerHTML=countA;
+     if(countA==96)
+     {
+	  clearInterval(intervalA);
+	 }
+    },94);
+    var intervalB=setInterval(function()
+    {
+     if(countB<79)
+     {
+	  countB++;
+     }
+     count2.innerHTML=countB;
+     if(countB==79)
+     {
+	  clearInterval(intervalB);
+	 }
+    },114);
+    var intervalC=setInterval(function()
+    {
+     if(countC<2263)
+     {
+	  countC++;
+	 }
+     count3.innerHTML=countC;
+     if(countC==2263)
+     {
+	  clearInterval(intervalC);
+	 }
+    },4);
+   } <!--9 seconds-->
+   
+   if(document.body.scrollTop>=1900||document.documentElement.scrollTop>1900)
+   {
+	$('.cham-course,.cham-detail').css('opacity','1');
+	$('.cham-course,.cham-detail').css('transform','scale(1)');
+   }
+  }
+  </script>
+  
+  <div class="TC">
+   <div class="left-theme2">
+    <div class="theme2"><span id="theme2">E-Learning Champion 2019</span></div>
+    <div class="hr">___________</div>
+   </div>
+   <div class="cham-group">
+    <button class="cham-programme">Foundation Programme</button>
+	<div class="cham-course">Physics</div>
+	<div class="cham-detail">
+	 <img src="champion/Dr.Siti Munira Jamil.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Dr.Siti Munira Jamil</div>
+	</div>
+	<div class="cham-detail">
+	 <img src="champion/Noor Syuhaida Ibrahim.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Noor Syuhaida Ibrahim</div>
+	</div>
+	 
+	<div class="cham-course">Chemistry</div>
+	<div class="cham-detail">
+	 <img src="champion/Puan Nawal Shaharudin.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Puan Nawal Shaharudin</div>
+	</div>
+   </div>
+  
+   <div class="cham-group">
+    <button class="cham-programme">Diploma Programme</button>
+	<div class="cham-course">Discrete Mathemathical</div>
+    <div class="cham-detail">
+	 <img src="champion/Puan Zur'aini Dahlan.png" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Puan Zur'aini Dahlan</div>
+    </div>
+ 	<div class="cham-course">System Analysis and Design</div>
+	<div class="cham-detail">
+	 <img src="champion/Puan Rozana Ismail.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Puan Rozana Ismail</div>
+	</div>
+	<div class="cham-detail">
+	 <img src="champion/Nor Syafiqah Binti Rosli.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Nor Syafiqah Binti Rosli</div>
+	</div>
+	<div class="cham-course">Pengaturcaraan VB.NET</div>
+	<div class="cham-detail">
+	 <img src="champion/Puan Rozana Ismail.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Puan Rozana Ismail</div>
+	</div>
+	<div class="cham-detail">
+	 <img src="champion/Nur Shahira Amira Binti Mohd Azhari.JPG" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Nur Shahira Amira Binti Mohd Azhari</div>
+	</div>
+   </div>
+	
+   <div class="cham-group">
+    <button class="cham-programme">Degree Programme</button>
+	<div class="cham-course">Principle of Management</div>
+	<div class="cham-detail">
+	 <img src="champion/Dr.Norazlina Binti Mohd Yasin.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Dr.Norazlina Binti Mohd Yasin</div>
+	</div>
+	<div class="cham-course">Graduate Success Attibutes</div>
+	<div class="cham-detail">
+	 <img src="champion/Cik Deepa Alagappan.jpg" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Cik Deepa Alagappan</div>
+	</div>
+   </div>
+	
+   <div class="cham-group">
+    <button class="cham-programme">Part-Time Programme</button>
+	<div class="cham-course">High Voltage Technology</div>
+	<div class="cham-detail">
+	 <img src="champion/Dr.Lau Kwan Yiew.png" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Dr.Lau Kwan Yiew</div>
+	</div>
+	<div class="cham-course">System Analysis and Design</div>
+	<div class="cham-detail">
+	 <img src="champion/Dr.Haslinda Hashim.png" id="cham-img" class="cham-img"/>
+	 <div class="cham-name">Dr.Haslinda Hashim</div>
+	</div>
+   </div>
+  </div>
+  
+  <div class="LN">
+   <div class="left-theme3">
+    <div class="theme3">Latest News</div>
+    <div class="hr">____</div>
+   </div>
+   <div class="right-theme3">
+    <div class="right-theme3-display">
+	 <button class="view-news" onclick="window.location.href='news.php'">View All</button>
+	 <i class="fa fa-angle-left"></i>
+	 <i class="fa fa-angle-right"></i>
+	 <script>
+	 var a=0,b=0,c=0;
+	 innerSize();
+	 function innerSize()
+     {
+      $('.news-width').css('left','0');
+	  if(window.innerWidth>1025)
+	  {
+	   c=3;
+	  }
+	  else if(window.innerWidth<=1025)
+	  {
+	   c=4;
+	  }
+	  else if(window.innerWidth<=768)
+	  {
+	   c=5;
+	  }
+	 }
+	 
+	 $('.fa-angle-left').click(function()
+	 {
+	  if(a!=0)
+	  {
+	   a--;
+	   b+=340;
+	   $('.news-width').css('left',b);
+	  }
+	 });
+	 $('.fa-angle-right').click(function()
+	 {
+	  if(a!=c)
+	  {
+	   a++;
+	   b-=340;
+	   $('.news-width').css('left',b);
+	  }
+	 });
+	 </script>
+	</div>
+   </div>
+   <div class="news-center">
+    <div class="news-width">
+	 <div class="news">
+      <img src="news/IUCEL18.jpg" width="300px" height="150px"/>
+	  <div class="news-theme">Visit to IUCEL 2018</div><br><br>
+	  <div class="news-time"><i class="far fa-calendar"></i>&nbsp;&nbsp;September 12, 2018</div>
+	  <div class="news-des">On September 12, 2018 (Wednesday), the Online Learning Division attended the IUCEL2018 carnival located at the IIUM Cultural Center (ICC),</div>
+	  <button class="news-btn"><a href="news.php?id=0" class="news-link">READ MORE</a></button>
+     </div>
+     <div class="news">
+	  <img src="news/n2.jpg" width="300px" height="150px"/>
+	  <div class="news-theme">Lecture Session Lecturer Use MyLearningSpace</div><br>
+	  <div class="news-time"><i class="far fa-calendar"></i>&nbsp;&nbsp;August 29, 2018</div>
+	  <div class="news-des">Session activities with lecturer Pn. Rozana binti Ismail, Dr. Sya Azmeela and Ms Aznita were held at MJIIT UTM KL,</div>
+	  <button class="news-btn"><a href="news.php?id=1" class="news-link">READ MORE</a></button>
+     </div>
+     <div class="news">
+	  <img src="news/Bengkel PPI.png" width="300px" height="150px"/>
+	  <div class="news-theme">UTMSPACE Online Center for Graduate Studies (PPI) Platform Workshop</div><br>
+	  <div class="news-time"><i class="far fa-calendar"></i>&nbsp;&nbsp;August 15, 2018</div>
+	  <div class="news-des">The UTMSPACE Center for Graduate Studies (PPI) Online Platform Introduction Workshop was held on August 15th, 2018 (Wednesday),</div>
+	  <button class="news-btn"><a href="news.php?id=2" class="news-link">READ MORE</a></button>
+     </div>
+	 <div class="news">
+	  <img src="news/BLC.png" width="300px" height="150px"/>
+	  <div class="news-theme">UTM Blended Learning Course (1,7,3,2)</div><br><br>
+	  <div class="news-time"><i class="far fa-calendar"></i>&nbsp;&nbsp;August 9, 2018</div>
+	  <div class="news-des">The UTM Blended Learning Course activities (1,7,3,2) were held on 9th August 2018 (Thursday), beginning at 8.00 am</div>
+	  <button class="news-btn"><a href="news.php?id=3" class="news-link">READ MORE</a></button>
+     </div>
+	 <div class="news">
+	  <img src="news/Bengkel PPD.png" width="300px" height="150px"/>
+	  <div class="news-theme">Online Platform Introduction Workshop with UTMSPACE Lecturer Center for Diploma Studies (PPD)</div>
+	  <div class="news-time"><i class="far fa-calendar"></i>&nbsp;&nbsp;July 25, 2018</div>
+	  <div class="news-des">The Online Platform Introductory Workshop with UTMSPACE Lecturer Center for Diploma Studies (PPD) was held on 25th July 2018 (Wednesday),</div>
+	  <button class="news-btn"><a href="news.php?id=4" class="news-link">READ MORE</a></button>
+     </div>
+	 <div class="news">
+	  <img src="news/Bengkel UTMSPACE.png" width="300px" height="150px"/>
+	  <div class="news-theme">UTMSPACE Online Management Platform Introduction Workshop</div><br>
+	  <div class="news-time"><i class="far fa-calendar"></i>&nbsp;&nbsp;July 25, 2018</div>
+	  <div class="news-des">The UTMSPACE Online Management Platform Introduction Workshop was held on July 25, 2018 (Wednesday),</div>
+	  <button class="news-btn"><a href="news.php?id=5" class="news-link">READ MORE</a></button>
+     </div>
+	</div>
+   </div>
+  </div>
+  
+  <div class="footer">
+   <div class="info">
+    <div class="info-logo"><img src="edulinelogo2white.png" width="216px" height="89px" alt="EduLine"></div>
+	<div class="info-des" style="text-align:justify">The Bahagian Pembelajaran Atas Talian(BPAT) was established to assist in managing the development of teaching & learning technology at UTMSPACE, in addition to promoting a more interactive e-learning culture among faculty and students.</div>
+   </div>
+   <script>
+   $(".info-logo").on("click",function(){$(window).scrollTop(0);});
+   </script>
+   <div class="info">
+	<div class="info-theme">CONTACT US</div>
+	<div class="info-des"><i class="fa fa-map-marker"></i> UTMSPACE<br>Fakulti Sains T05, Skudai, 80990 Johor Bahru, Johor</div>	
+	<div class="info-des"><img src="utmspaceQRcode1.png" width="30%"/></div>
+	<div class="info-des"><i class="fa fa-phone-alt"></i> +607 531 8006 (JB)</div>
+	<div class="info-des"><i class="fa fa-phone-alt"></i> +603 2728 6533 (KL)</div>
+	<div class="info-des"><a href="mailto:eduline@utmspace.edu.my" id="email"><i class="fa fa-envelope"></i> eduline@utmspace.edu.my</a></div>
+	<div class="info-des"><i class="fa fa-fax"></i> +603 2778 4566</div>
+   </div>
+   <div class="info">
+	<div class="info-theme">RECENT POSTS</div>
+	<div class="info-des"><a href="news.php?id=0" id="post">Visit to IUCEL 2018</a></div>
+	<div class="info-des"><a href="news.php?id=1" id="post">Lecture Session Lecturer Use MyLearningSpace</a></div>
+	<div class="info-des"><a href="news.php?id=2" id="post">UTMSPACE Online Center for Graduate Studies (PPI) Platform Workshop</a></div>
+	<div class="info-des"><a href="news.php?id=3" id="post">UTM Blended Learning Course (1,7,3,2)</a></div>
+	<div class="info-des"><a href="news.php?id=4" id="post">Online Platform Introduction Workshop with UTMSPACE Lecturer Center for Diploma Studies (PPD)</a></div>
+	<div class="info-des"><a href="news.php?id=5" id="post">UTMSPACE Online Management Platform Introduction Workshop</a></div>
+   </div>
+   <div class="info">
+	<div class="info-theme">OPEN HOURS</div>
+	<div class="info-des" style="padding-bottom:0px">UTMSPACE (JB)</div>
+	<div class="info-des" style="padding-bottom:0px">Sunday-Thursday:</span><span id="weekdayR">8.30 am to 4:30pm</span></div>
+	<div class="info-des" style="padding-bottom:0px"><hr class="dot"></div>
+	<div class="info-des">Friday-Saturday:</span><span id="weekendR">Closed</span></div>
+	<div class="info-des" style="padding-top:20px">UTMSPACE (KL)</div>
+	<div class="info-des" style="padding-bottom:0px">Monday-Friday:</span><span id="weekdayR">8.30 am to 4:30pm</span></div>
+	<div class="info-des" style="padding-bottom:0px"><hr class="dot"></div>
+	<div class="info-des" style="padding-bottom:0px">Saturday-Sunday:</span><span id="weekendR">Closed</span></div>
+   </div>
+   <hr class="info-hr">
+   <div class="info-des copy">Copyright &copy; 2020 <a id="home">EduLine</a> - <a href="https://www.filathemes.com/downloads/education-lms/" target="_blank" id="lms">Education LMS</a> theme by <span style="color:#ffb606">FilaThemes</span></div>
+   <script>
+   $("#home").on("click",function()
+   {
+	$(window).scrollTop(0);
+   });
+   </script>
+  </div>
+ </div>
+</body>
+</html>
